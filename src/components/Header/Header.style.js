@@ -1,5 +1,6 @@
 import { IoIosArrowDropdown } from 'react-icons/io';
 import styled from 'styled-components';
+import { motion } from "framer-motion";
 
 export const Container = styled.div`
   display: grid;
@@ -15,12 +16,13 @@ export const Container = styled.div`
   right: 0;
   top: 0;
   z-index: 1;
+  background-color: #000;
   
 
   @media ${(props) => props.theme.breakpoints.sm} {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 60px);
+    grid-template-rows: repeat(2, 6px);
     grid-column-gap: 0.5rem;
     grid-row-gap: 0.5rem;
   }
@@ -43,13 +45,13 @@ export const Div1 = styled.div`
   align-content: center;
   width: 100%;
   @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 1 / 1 / 2 / 3;
+    grid-area: 1 / 1 / 4 / 3;
   }
   a {
     color: ${(props) => props.theme.colors.primary3};
   }
 `;
-export const Div2 = styled.div`
+export const Div2 = styled(motion.div)`
   grid-area: 1 / 3 / 2 / 4;
   display: flex;
   justify-content: space-between;
