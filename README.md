@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# Getting Started with Create React App 
+[![Node.js Package](https://github.com/prashilw/react_portfolio/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/prashilw/react_portfolio/actions/workflows/npm-publish.yml)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
