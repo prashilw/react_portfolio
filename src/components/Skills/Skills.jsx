@@ -1,13 +1,18 @@
 import React, { useEffect } from 'react';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { Progress, ProgressItem, ReactProgress, ProgressListItem, ItemWidth } from './Skills.style';
+import { ReactProgress, ProgressListItem, ItemWidth } from './Skills.style';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation } from 'framer-motion';
+import { SkillsData } from '../../constants/constants';
+
+const showDetail =(event, name)=> {
+    console.log(name);
+  }
 
 const Skills = () => {
-    const novice = 'linear-gradient(to right, #e980b9, #6de5fa);';
-    const proficient = 'linear-gradient(to left, #F2709C, #FF9472)';
-    const expert = 'linear-gradient(to left, #02709C, #FF9472)';
+    // const novice = 'linear-gradient(to right, #e980b9, #6de5fa);';
+    // const proficient = 'linear-gradient(to left, #F2709C, #FF9472)';
+    // const expert = 'linear-gradient(to left, #02709C, #FF9472)';
 
     const controls = useAnimation();
     const { ref, inView } = useInView({
@@ -50,21 +55,18 @@ const Skills = () => {
                 Skills
             </SectionTitle>
             <SectionText>Skills I possess</SectionText>
-            <Progress>
-                <ProgressItem><span>novice</span></ProgressItem>
-                <ProgressItem><span>proficient</span></ProgressItem>
-                <ProgressItem><span>expert</span></ProgressItem>
-            </Progress>
+            
             <ReactProgress max={'100'} value={'70'} initial="hidden" animate={controls} ref={ref}>
-                <span>Javascript</span><br /><ProgressListItem  max='100' colorVariant={novice} data-label="50% Complete" variants={childVariant}>
-                    <ItemWidth variants={progressVariant} percent={'80'}/>
-                </ProgressListItem>
-                <span>Javascript</span><br /><ProgressListItem percent={'20'} max='100' colorVariant={proficient} data-label="50% Complete" variants={childVariant}>
-                    <ItemWidth variants={progressVariant} percent={'20'}/>
-                </ProgressListItem>
-                <span>Javascript</span><br /><ProgressListItem percent={'70'} value={'30'} max='100' colorVariant={expert} data-label="50% Complete" variants={childVariant}>
-                    <ItemWidth variants={progressVariant} />
-                </ProgressListItem>
+            {SkillsData.map(({ name, value }) => {
+                return (
+                    <>
+                    <SectionText style={{ paddingBottom : '0rem' }}>{name}</SectionText>
+                    <ProgressListItem  max='100' variants={childVariant}>
+                        <ItemWidth variants={progressVariant} percent={value} onClick={(e) => showDetail(e, name)}/>
+                    </ProgressListItem>
+                    </>
+                )
+            })}
             </ReactProgress>
         </Section>
     );

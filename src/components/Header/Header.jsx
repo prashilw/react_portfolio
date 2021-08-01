@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { WiSunrise } from 'react-icons/wi';
 import { AiFillInstagram, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai';
-import { animateScroll as scroll, Link } from 'react-scroll';
+import {  Link } from 'react-scroll';
 import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span, Hamburger } from './Header.style';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation } from 'framer-motion';
@@ -33,12 +33,18 @@ const Header = () =>  {
     }
   }, [animation, inView]);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0, 
+      behavior: 'smooth'
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  }
   return (
     <Container ref={ref} initial="hidden" animate={animation} variants={headerVariant}>
-    <Div1 onClick={()=> scroll.scrollToTop()}>
-      <Link to="/">
+    <Div1 onClick={()=> scrollToTop()}>
           <WiSunrise size="5rem" /><Span>Portfolio</Span>
-      </Link>
     </Div1>
     <Div2 style={{ paddingTop: '1.5rem'}} isOpen={isOpen}>
       <li>

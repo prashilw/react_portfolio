@@ -38,9 +38,9 @@ export const Span = styled.span`
 ;
 export const Div1 = styled.div`
   grid-area: 1 / 1 / 2 / 4;
-  display: grid;
+  display: flex;
   padding-right: 3rem;
-
+  cursor: pointer;
   flex-direction: row;
   align-content: center;
   width: 100%;

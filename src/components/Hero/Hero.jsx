@@ -6,6 +6,7 @@ import ReactTypingEffect from 'react-typing-effect';
 import { StyledButton } from '../../styles/GlobalComponents/CustomButton.style';
 import { useInView } from 'react-intersection-observer';
 import {   useAnimation } from 'framer-motion';
+import { HeroData } from '../../constants/constants';
 
 const Hero = (props) => {
   const {ref, inView} = useInView();
@@ -39,7 +40,7 @@ const Hero = (props) => {
       <SectionTitle main center>
         I am <br/>Prashil Wasnik
       </SectionTitle>
-        <ReactTypingEffect speed="300ms" eraseSpeed="300ms" text={["SAP Certified Fiori Consultant", "SAP Certified Extension Suite Developer"]}
+        <ReactTypingEffect speed="300ms" eraseSpeed="300ms" text={HeroData}
         style={{ display: 'flex', fontSize: '2rem', paddingBottom: '2rem'}}/>
         <br/>
         <StyledButton href="#about">Learn More</StyledButton>
