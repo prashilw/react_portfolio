@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import React from 'react';
+import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 
 const About = () => {
     

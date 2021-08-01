@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { CareerData, TimeLineData } from '../../constants/constants';
+import { CareerData } from '../../constants/constants';
 import { SectionDivider, Section, SectionTitle } from '../../styles/GlobalComponents';
 import { TimeLineContainer, TimeLineItem } from './TimeLine.style';
 import { useInView } from 'react-intersection-observer';

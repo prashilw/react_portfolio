@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { DiFirebase, DiReact, DiZend } from 'react-icons/di';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { Progress, ProgressItem, ReactProgress, ProgressListItem, ItemWidth } from './Skills.style';
 import { useInView } from 'react-intersection-observer';

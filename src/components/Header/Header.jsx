@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { WiSunrise } from 'react-icons/wi';
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai';
-import { GiHypersonicBolt } from 'react-icons/gi';
+import { AiFillInstagram, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai';
 import { animateScroll as scroll, Link } from 'react-scroll';
 import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span, Hamburger } from './Header.style';
 import { useInView } from 'react-intersection-observer';
-import { animate, useAnimation } from 'framer-motion';
+import { useAnimation } from 'framer-motion';
 const Header = () =>  {
   const [isOpen, setIsOpen] = useState(false);
   const [ref, inView] = useInView();

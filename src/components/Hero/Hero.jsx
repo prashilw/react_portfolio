@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import { Section, SectionTitle } from '../../styles/GlobalComponents';
 import { LeftSection } from './Hero.style';
 import ReactTypingEffect from 'react-typing-effect';
 import { StyledButton } from '../../styles/GlobalComponents/CustomButton.style';
