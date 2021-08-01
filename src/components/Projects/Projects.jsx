@@ -55,7 +55,7 @@ const Projects = () => {
 
 
   return (
-    <Section nopadding id="project" background={'white'}>
+    <Section nopadding id="blog" background={'white'}>
       <SectionDivider />
       <SectionTitle main>Blogs</SectionTitle>
         <GridContainer variants={variants} initial="hidden" animate={controls} ref={ref}>

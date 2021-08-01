@@ -83,6 +83,7 @@ export const SectionText = styled.p`
 export const SectionDivider = styled.div`
 color: #2EC4B6;
 font-size: 6vh;
+box-sizing: border-box;
 text-shadow: 1px 1px 1px rgba(0, 0, 0, .45);
 display: flex;
 justify-content: center;
@@ -96,13 +97,13 @@ align-items: center;
   }
   
   &::before {
-    background: linear-gradient(to right, rgba(240,240,240,0), #2EC4B6);
-    margin-right: 1vh;
+    background: linear-gradient(to right, rgba(240,240,240,0), hsla(204,50%,75%,0.89));
+    /* margin-right: 1vh; */
   }
   
   &::after {
-    background: linear-gradient(to left, rgba(240,240,240,0), #2EC4B6);
-    margin-left: 1vh;
+    background: linear-gradient(to left, rgba(240,240,240,0), hsla(204,50%,75%,0.89)  );
+    /* margin-left: 1vh; */
   } 
 `
 export const SectionSubText = styled.p`

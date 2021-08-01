@@ -46,7 +46,7 @@ const Skills = () => {
 
     return (
 
-        <Section>
+        <Section nopadding id="skill">
             <SectionDivider />
             <SectionTitle>
                 Skills

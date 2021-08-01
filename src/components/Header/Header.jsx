@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { WiSunrise } from 'react-icons/wi';
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai';
 import { GiHypersonicBolt } from 'react-icons/gi';
 import { animateScroll as scroll, Link } from 'react-scroll';
@@ -7,46 +8,57 @@ import { useInView } from 'react-intersection-observer';
 import { animate, useAnimation } from 'framer-motion';
 const Header = () =>  {
   const [isOpen, setIsOpen] = useState(false);
-  const [ref, inView] = useInView({
-    threshold: 0.8
-  });
+  const [ref, inView] = useInView();
   const animation = useAnimation();
+
+  const headerVariant = {
+    hidden : {
+      y : 0,
+      opacity: 0
+    },
+    visible : {
+      y : 8,
+      opacity: 1,
+      transition : {
+        delay: 1,
+        duration : 1
+      }
+    }
+  }
+
   useEffect(() => {
     if(inView){
-      animation.start({
-        x: 0,
-        transition : {
-          type: 'spring',
-          bounce: 0.3
-        }
-      });
+      animation.start('visible');
     } else {
-      animation.start({
-        x: '-100vw'
-      })
+      animation.start('hidden');
     }
-  }, [inView]);
+  }, [animation, inView]);
 
   return (
-    <Container ref={ref}>
+    <Container ref={ref} initial="hidden" animate={animation} variants={headerVariant}>
     <Div1 onClick={()=> scroll.scrollToTop()}>
       <Link to="/">
-          <GiHypersonicBolt size="5rem" /><Span>Portfolio</Span>
+          <WiSunrise size="5rem" /><Span>Portfolio</Span>
       </Link>
     </Div1>
-    <Div2 style={{ paddingTop: '1.5rem'}} isOpen={isOpen} initial={{scale: 0}} animate={{ scale: 1 }}>
+    <Div2 style={{ paddingTop: '1.5rem'}} isOpen={isOpen}>
       <li>
-        <Link to="project">
-          <NavLink>Projects</NavLink>
+        <Link to="blog">
+          <NavLink>Blogs</NavLink>
         </Link>
       </li>
       <li>
-        <Link to="tech">
-          <NavLink>Technologies</NavLink>
+        <Link to="skill">
+          <NavLink>Skills</NavLink>
+        </Link>
+      </li>
+      <li>
+        <Link to="timeline">
+          <NavLink>Career</NavLink>
         </Link>
       </li>        
       <li>
-        <Link to="accomplishment">
+        <Link to="about">
           <NavLink>About</NavLink>
         </Link>
       </li>        

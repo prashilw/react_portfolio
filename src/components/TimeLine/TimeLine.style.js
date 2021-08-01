@@ -1,12 +1,13 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const TimeLineContainer = styled.div`
+export const TimeLineContainer = styled(motion.div)`
     display: flex;
     flex-direction: column;
     position: relative;
     margin: 40px 0;
     width: 80rem;
-align-self: center;
+    align-self: center;
     &:after {
         background-color: red;
         content: '';
@@ -17,11 +18,13 @@ align-self: center;
     }
 `;
 
-export const TimeLineItem = styled.div`
+export const TimeLineItem = styled(motion.div)`
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
     padding: 1rem 3rem 1rem 3rem;
-    margin: 0px 0px 2rem 0px;
+    margin: 0px 0px 10rem 0px;
     box-shadow: -5px 4px 1px rgba(0, 0, 0, 0.2);
     position: relative;
     right: 2rem;
@@ -50,5 +53,20 @@ export const TimeLineItem = styled.div`
     }
     .timeline-item-content {
         max-width: 70%;
+    }
+    span {
+        right : 0;
+        padding: 0 1rem 0 1rem;
+        position: absolute;
+        background: red;
+        border-radius: 1rem;
+        font-variant: small-caps;
+    }
+    time {
+        left : 0;
+        padding: 0 1rem 0 1rem;
+        position: relative;
+        background: red;
+        border-radius: 1rem;
     }
 `;

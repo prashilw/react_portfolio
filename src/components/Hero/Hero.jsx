@@ -32,7 +32,7 @@ const Hero = (props) => {
           }
         });
       }
-  }, [inView]);
+  }, [animation,inView]);
   return (
   <Section row nopadding >
     <LeftSection ref={ref} animate={animation}>

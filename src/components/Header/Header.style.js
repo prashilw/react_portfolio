@@ -2,7 +2,7 @@ import { IoIosArrowDropdown } from 'react-icons/io';
 import styled from 'styled-components';
 import { motion } from "framer-motion";
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
@@ -14,7 +14,7 @@ export const Container = styled.div`
   position: sticky;
   left: 0;
   right: 0;
-  top: 0;
+  top: -1rem;
   z-index: 1;
   background-color: #000;
   
@@ -51,7 +51,7 @@ export const Div1 = styled.div`
     color: ${(props) => props.theme.colors.primary3};
   }
 `;
-export const Div2 = styled(motion.div)`
+export const Div2 = styled.div`
   grid-area: 1 / 3 / 2 / 4;
   display: flex;
   justify-content: space-between;
