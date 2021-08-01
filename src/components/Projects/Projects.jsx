@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList, Img } from './Projects.style';
+import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList } from './Projects.style';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
 import { useAnimation } from 'framer-motion';
@@ -62,7 +62,7 @@ const Projects = () => {
           {projects.map(({ title, description, id, image, tags, source, visit }) => {
             return (
               <BlogCard key={id} variants={childrenVariant}>
-                <Img src={image} />
+                {/* <Img src={image} /> */}
                 <TitleContent>
                   <HeaderThree title>{title}</HeaderThree>
                   <Hr />
@@ -71,7 +71,7 @@ const Projects = () => {
                     <TitleContent>
                       <TagList>
                         {tags.map((tag, i) => (
-                          <Tag id={i}>{tag}</Tag>
+                          <Tag key={i} id={i}>{tag}</Tag>
                         ))}
                       </TagList>
                     </TitleContent>

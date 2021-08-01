@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CareerData } from '../../constants/constants';
 import { SectionDivider, Section, SectionTitle } from '../../styles/GlobalComponents';
 import { TimeLineContainer, TimeLineItem } from './TimeLine.style';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation } from 'framer-motion';
+import Modal from '../Modal/Modal';
 
 const TimeLine = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const { ref, inView } = useInView();
     const animation = useAnimation();
     const timeVariant = {
@@ -50,7 +52,7 @@ const TimeLine = () => {
             <SectionTitle>Timeline</SectionTitle>
             <TimeLineContainer variants={timeVariant} initial="hidden" animate={animation}>
                 {CareerData.map((data, idx) => (
-                    <TimeLineItem variants={timeItemVariant} ref={ref}>
+                    <TimeLineItem id={idx} key={idx} variants={timeItemVariant} ref={ref} onClick={() => setIsModalOpen(true)}>
                     <div className="timeline-item-content">
                         <span className="tag">
                             {data.category}
@@ -63,6 +65,9 @@ const TimeLine = () => {
                 ))}
                 {/* <TimeLineItem variants={timeItemVariant} data={{text:"newText"}}/> */}
             </TimeLineContainer>
+            <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                This is from Project
+            </Modal>
         </Section>
     )
 }
