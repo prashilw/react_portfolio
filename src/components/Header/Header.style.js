@@ -78,7 +78,7 @@ export const Div3 = styled.div`
 `;
 
 // Navigation Links
-export const NavLink = styled.a`
+export const NavLink = styled.div`
   font-size: 2rem;
   font-weight: bold;
   padding: 2rem;

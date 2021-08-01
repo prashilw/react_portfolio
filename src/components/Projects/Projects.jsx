@@ -62,7 +62,7 @@ const Projects = () => {
           {projects.map(({ title, description, id, image, tags, source, visit }) => {
             return (
               <BlogCard key={id} variants={childrenVariant}>
-                <Img src={image} />
+                {/* <Img src={image} /> */}
                 <TitleContent>
                   <HeaderThree title>{title}</HeaderThree>
                   <Hr />
@@ -71,7 +71,7 @@ const Projects = () => {
                     <TitleContent>
                       <TagList>
                         {tags.map((tag, i) => (
-                          <Tag id={i}>{tag}</Tag>
+                          <Tag key={i} id={i}>{tag}</Tag>
                         ))}
                       </TagList>
                     </TitleContent>

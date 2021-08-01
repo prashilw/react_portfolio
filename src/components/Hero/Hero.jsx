@@ -42,7 +42,7 @@ const Hero = (props) => {
         <ReactTypingEffect speed="300ms" eraseSpeed="300ms" text={["SAP Certified Fiori Consultant", "SAP Certified Extension Suite Developer"]}
         style={{ display: 'flex', fontSize: '2rem', paddingBottom: '2rem'}}/>
         <br/>
-        <StyledButton href="#aboutMe">Learn More</StyledButton>
+        <StyledButton href="#about">Learn More</StyledButton>
     </LeftSection>
   </Section>
   );
