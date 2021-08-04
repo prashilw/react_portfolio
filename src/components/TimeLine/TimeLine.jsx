@@ -5,7 +5,6 @@ import { TimeLineContainer, TimeLineItem } from './TimeLine.style';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation } from 'framer-motion';
 import Modal from '../Modal/Modal';
-import { Animated } from "react-animated-css";
 
 const TimeLine = () => {
     var options = { year: 'numeric', month: 'long' };
