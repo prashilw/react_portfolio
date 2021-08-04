@@ -1,7 +1,8 @@
 export const HeroData = [
   "SAP Certified Fiori Consultant", 
   "SAP Certified Extension Suite Developer",
-  "Certified Supply Chain Management Professional"
+  "Certified Supply Chain Management Professional",
+  "Certified Java Professional"
 ]
 export const projects = [
   {
@@ -43,49 +44,37 @@ export const projects = [
 ];
 
 export const SkillsData = [
-  { value: 90, name: 'SAP Fiori', },
-  { value: 70, name: 'BTP Platform', },
+  { value: 90, name: 'SAP Fiori', description: "I have started working in SAP Fiori from 2013 during the initial release. From past 8 yrs, I am predominantly working as Fiori Architect. I have worked on almost all types of UI5/Fiori Projects from freestyle UI5, Fiori Elements and Adaptaion Projects." },
+  { value: 70, name: 'BTP Platform', description: "Business Technology Platform is now the torchbearer for the upcoming innovation in the SAP world. My journey with BTP or smaller set SCP started 3-4 yrs back when it was in rudimentary shape. I have also worked on couple of projects which uses SCP. BTP recent stalwarts from SAP, I have completed my extension certification and now eyeing for the Integration Suite."},
   { value: 70, name: 'Javascript', },
   { value: 60, name: 'Java', },
   { value: 50, name: 'ABAP / CDS / BOPF', },
-  { value: 60, name: 'React.js', }
+  { value: 60, name: 'React', }
 ];
 
 export const CareerData = [
   {
     text: "Joined as Campus recruit",
-    date: "17.10.2005",
-    category: ["TCS","IT Analyst"],
-    link: {
-      url: "",
-      text: ""
-    }
+    date: new Date("2005-10-17"),
+    category: ["TCS", "IT Analyst"],
+    description: "Fresh from the college, recruited and spent 3 months on intensive training to join the corporate world.\n It was also my first step into SAP World. I got trained in Java and SAP Portal. While working on the projects, I learned SAP E-commerce platform." 
   },
   {
     text: "Joined as SAP CRM Technical Consultant",
-    date: "16.06.2011",
-    category: ["IBM","SAP Consultant"],
-    link: {
-      url: "",
-      text: ""
-    }
+    date: new Date("2011-06-16"),
+    category: ["IBM","Sr. Advisory Analyst"],
+    description: "IBM is completely new culture. Primarily worked as SAP CRM Technical Consultant. Though my journey here was short but learnt functional aspect of the consultant." 
   },
   {
     text: "SAP Web Lead",
-    date: "28.12.2011",
+    date: new Date("2011-12-28"),
     category: ["Honeywell","Sr. SAP Technical Consultant"],
-    link: {
-      url: "",
-      text: ""
-    }
+    description: ""
   },
   {
     text: "UI Associate Architect",
-    date: "26.12.2005",
+    date: new Date("2016-12-26"),
     category: ["SAP","Senior Deveoper"],
-    link: {
-      url: "",
-      text: ""
-    }
+    description: ""
   }
 ];

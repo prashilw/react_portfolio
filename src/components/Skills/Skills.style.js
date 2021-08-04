@@ -1,10 +1,23 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const Progress = styled.ul`
 
 
 `
+
+const bounce = keyframes`
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+            40% {transform: translateY(-30px);} 
+            60% {transform: translateY(-15px);} 
+`;
+
+const fly_right = keyframes`
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+            40% {transform: translateY(-30px);} 
+            60% {transform: translateY(-15px);} 
+`;
+
 export const ProgressItem = styled.li`
     margin: 1rem 2em;
     display: inline-flex;
@@ -57,9 +70,16 @@ export const ProgressListItem = styled(motion.div)`
     border-radius: 1rem;
     background-color: #fff;
     }
-    div {
-      
+    &:hover{
+        cursor: pointer;
+        animation: ${bounce} 1s linear infinite;
     }
+
+    &:active {
+        border: 1rem solid;
+        border-color: #fff;
+    }
+    
 }
 
 `;
@@ -76,9 +96,7 @@ export const ItemWidth = styled(motion.div)`
       max-width: ${(props)=> props.percent}%;
       border-radius: 1rem;
       position: relative;
-      &:hover{
-        cursor: pointer;
-      }
+      
       &::after{
         content: '';
         background: -webkit-linear-gradient(to right, #F11712, #0099F7);  /* Chrome 10-25, Safari 5.1-6 */
@@ -99,4 +117,11 @@ export const ItemWidth = styled(motion.div)`
         left: 3rem;
         width: 100%;
       }
+`;
+
+
+
+export const SkillDetail = styled(motion.div)`
+    animation: ${fly_right} 1s;
+    width: 40vw;
 `;

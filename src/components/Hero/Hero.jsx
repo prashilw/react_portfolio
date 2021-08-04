@@ -43,7 +43,7 @@ const Hero = (props) => {
         <ReactTypingEffect speed="300ms" eraseSpeed="300ms" text={HeroData}
         style={{ display: 'flex', fontSize: '2rem', paddingBottom: '2rem'}}/>
         <br/>
-        <StyledButton href="#about">Learn More</StyledButton>
+        <StyledButton to="about" spy={true} smooth={true} offset={50} duration={500}>Learn More</StyledButton>
     </LeftSection>
   </Section>
   );

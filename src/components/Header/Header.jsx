@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { WiSunrise } from 'react-icons/wi';
 import { AiFillInstagram, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai';
-import {  Link } from 'react-scroll';
+import {  Link, animateScroll as scroll } from 'react-scroll';
 import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span, Hamburger } from './Header.style';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation } from 'framer-motion';
+
 const Header = () =>  {
   const [isOpen, setIsOpen] = useState(false);
   const [ref, inView] = useInView();
@@ -34,12 +35,7 @@ const Header = () =>  {
   }, [animation, inView]);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0, 
-      behavior: 'smooth'
-      /* you can also use 'auto' behaviour
-         in place of 'smooth' */
-    });
+    scroll.scrollToTop();
   }
   return (
     <Container ref={ref} initial="hidden" animate={animation} variants={headerVariant}>
@@ -48,22 +44,22 @@ const Header = () =>  {
     </Div1>
     <Div2 style={{ paddingTop: '1.5rem'}} isOpen={isOpen}>
       <li>
-        <Link to="blog">
+        <Link to="blog" activeClass="active" smooth={true} offset={-100} duration={500}>
           <NavLink>Blogs</NavLink>
         </Link>
       </li>
       <li>
-        <Link to="skill">
+        <Link to="skill" activeClass="active" smooth={true} offset={-100} duration={500}>
           <NavLink>Skills</NavLink>
         </Link>
       </li>
       <li>
-        <Link to="timeline">
+        <Link to="timeline" activeClass="active" smooth={true} offset={-100} duration={500}>
           <NavLink>Career</NavLink>
         </Link>
       </li>        
       <li>
-        <Link to="about">
+        <Link to="about" activeClass="active" smooth={true} offset={-100} duration={500}>
           <NavLink>About</NavLink>
         </Link>
       </li>        

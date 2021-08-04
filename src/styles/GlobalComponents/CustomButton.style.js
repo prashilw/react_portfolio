@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Scroll as Button } from "react-scroll";
 
-export const StyledButton = styled.button `
+export const StyledButton = styled.button`
     width: 20rem;
     border: 1px solid #E76F51;
     background: none;
