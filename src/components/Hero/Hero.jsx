@@ -7,6 +7,7 @@ import { StyledButton } from '../../styles/GlobalComponents/CustomButton.style';
 import { useInView } from 'react-intersection-observer';
 import {   useAnimation } from 'framer-motion';
 import { HeroData } from '../../constants/constants';
+import { animateScroll as scroll } from 'react-scroll';
 
 const Hero = (props) => {
   const {ref, inView} = useInView();
@@ -34,6 +35,10 @@ const Hero = (props) => {
         });
       }
   }, [animation,inView]);
+
+  const scrollToAbout = () => {
+      scroll.scrollTo(3750);
+  }
   return (
   <Section row nopadding >
     <LeftSection ref={ref} animate={animation}>
@@ -43,7 +48,7 @@ const Hero = (props) => {
         <ReactTypingEffect speed="300ms" eraseSpeed="300ms" text={HeroData}
         style={{ display: 'flex', fontSize: '2rem', paddingBottom: '2rem'}}/>
         <br/>
-        <StyledButton to="about" spy={true} smooth={true} offset={50} duration={500}>Learn More</StyledButton>
+        <StyledButton to="about" onClick={()=> scrollToAbout()}>Learn More</StyledButton>
     </LeftSection>
   </Section>
   );
