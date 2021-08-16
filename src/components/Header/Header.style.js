@@ -9,6 +9,7 @@ export const Container = styled(motion.div)`
   grid-column-gap: 2rem;
   padding: 1rem;
   padding-bottom: 1rem;
+  margin-left: 3rem;
   width: 100%; 
   flex-wrap: wrap;
   position: sticky;
@@ -34,12 +35,16 @@ export const Span = styled.span`
   font-weight: bold;
   color: ${(props) => props.theme.colors.primary3};
   display: inline;
+  @media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 3rem;
+  }
 `
 ;
 export const Div1 = styled.div`
   grid-area: 1 / 1 / 2 / 4;
   display: flex;
   padding-right: 3rem;
+  padding-top: 1rem;
   cursor: pointer;
   flex-direction: row;
   align-content: center;
@@ -58,13 +63,27 @@ export const Div2 = styled.div`
   height: 100%;
   @media ${(props) => props.theme.breakpoints.sm} {
     grid-area: 2 / 8 / 5 / 4;
-    overflow: hidden;
     justify-content: space-between;
     flex-direction: column;
     margin-bottom: 4rem;
-    max-height: ${(props) => (props.isOpen ? '20rem' : '0rem')};
+    height: 30rem;
+    max-height: ${(props) => (props.isOpen ? '60rem' : '0rem')};
+    display:${(props) => (props.isOpen ? 'flex' : 'none')};
     transition: max-height 0.7s ease-in;
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 20rem;
+    justify-content: space-between;
+    align-items: center;
   }
+  @media screen and (max-width: 950px) {
+    display:${(props) => (props.isOpen ? 'flex' : 'none')};
+  }
+
+  
 `;
 export const Div3 = styled.div`
   grid-area: 1 / 5 / 2 / 6;
@@ -73,7 +92,7 @@ export const Div3 = styled.div`
   align-items: center;
   @media ${(props) => props.theme.breakpoints.sm} {
     align-items: center;
-    grid-area: 1 / 4 / 2 / 6;
+    grid-area: 1 / 3 / 4 / 6;
   }
 `;
 
@@ -81,16 +100,24 @@ export const Div3 = styled.div`
 export const NavLink = styled.div`
   font-size: 2rem;
   font-weight: bold;
-  padding: 2rem;
+  padding: 0.5rem;
+  margin-right: 3rem;
   line-height: 32px;
   color: ${(props) => props.theme.colors.primary3};
   transition: 0.4s ease;
   &:hover {
     background-color: #212d45;
     border-radius: 50px;
-    font-size: 4rem;
+    font-size: 2rem;
+    scale: 1.5;
     opacity: 1;
     cursor: pointer;
+  }
+  &:active {
+    background-color: #212d45;
+    border-radius: 50px;
+    font-size: 2rem;
+    scale: 1.5;
   }
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0.5rem;
@@ -174,4 +201,7 @@ display: none;
  @media ${(props) => props.theme.breakpoints.sm} {
   display: flex;
 }
+@media screen and (max-width: 950px) {
+  display: flex;
+  }
 `;

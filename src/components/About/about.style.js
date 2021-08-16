@@ -14,12 +14,12 @@ export const Details = styled(motion.div)`
 `;
 
 export const Carousel = styled(motion.div)`
-    width: 50vw;
+    width: 30vw;
     background: radial-gradient(circle,rgb(165 156 156) 20%,rgb(0 0 0) 60%),url(/react_portfolio/portfolio.jpg);
     background-blend-mode: hard-light;
     margin-right: 3rem;
   /* Set a specific height */
-    height: 60vw;
+    height: 40vw;
     border-radius: 2rem;
     /* Position and center the image to scale nicely on all screens */
     background-position: bottom;
