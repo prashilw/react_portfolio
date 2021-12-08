@@ -42,8 +42,9 @@ export const OverLay = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
-    position: relative;
+    position: absolute;
     bottom: 1rem;
+    left: 30%;
     .close-button {
         @media ${(props) => props.theme.breakpoints.sm} {
             position: absolute;
