@@ -13,7 +13,7 @@ export const Container = styled(motion.div)`
   z-index: 5;
   background-color: #000;
   position: fixed;
-  top: 0rem;
+  top: -1rem;
   
 
   @media ${(props) => props.theme.breakpoints.sm} {
