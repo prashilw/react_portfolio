@@ -5,18 +5,15 @@ import { motion } from "framer-motion";
 export const Container = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-rows: 0fr;
   grid-column-gap: 2rem;
-  padding: 1rem;
   padding-bottom: 1rem;
   width: 100%; 
   flex-wrap: wrap;
-  position: sticky;
-  left: 0;
-  right: 0;
-  top: -1rem;
-  z-index: 1;
+  z-index: 5;
   background-color: #000;
+  position: fixed;
+  top: 0rem;
   
 
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -60,11 +57,15 @@ export const Div2 = styled.div`
   display: flex;
   justify-content: space-between;
   height: 100%;
+  .close-button {
+    display: none;
+  }
   @media ${(props) => props.theme.breakpoints.sm} {
     grid-area: 2 / 8 / 5 / 4;
     justify-content: space-between;
     flex-direction: column;
     margin-bottom: 4rem;
+    margin-top: 4rem;
     height: 30rem;
     max-height: ${(props) => (props.isOpen ? '60rem' : '0rem')};
     display:${(props) => (props.isOpen ? 'flex' : 'none')};
@@ -72,9 +73,9 @@ export const Div2 = styled.div`
     position: absolute;
     z-index: 20;
     top: 0;
-    left: 0;
+    right: 0rem;
     background: #fff;
-    width: 20rem;
+    width: 40rem;
     justify-content: space-between;
     align-items: center;
   }

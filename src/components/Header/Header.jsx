@@ -5,6 +5,7 @@ import {  Link, animateScroll as scroll } from 'react-scroll';
 import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span, Hamburger } from './Header.style';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation } from 'framer-motion';
+import { ThemeButton } from '../../styles/GlobalComponents/CustomButton.style';
 
 const Header = () =>  {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,6 +35,10 @@ const Header = () =>  {
     }
   }, [animation, inView]);
 
+  const popoverClose = () => {
+    console.log(isOpen + "popover state");
+    
+  }
   const scrollToTop = () => {
     scroll.scrollToTop();
   }
@@ -44,22 +49,22 @@ const Header = () =>  {
     </Div1>
     <Div2 style={{ paddingTop: '1.5rem'}} isOpen={isOpen}>
       <li>
-        <Link to="blog" activeClass="active" smooth={true} offset={-100} duration={500}>
+        <Link to="blog" activeClass="active" smooth={true} offset={-100} duration={500} onClick={()=> setIsOpen(!isOpen)}>
           <NavLink>Blogs</NavLink>
         </Link>
       </li>
       <li>
-        <Link to="skill" activeClass="active" smooth={true} offset={-100} duration={500}>
+        <Link to="skill" activeClass="active" smooth={true} offset={-100} duration={500} onClick={()=> setIsOpen(!isOpen)}>
           <NavLink>Skills</NavLink>
         </Link>
       </li>
       <li>
-        <Link to="timeline" activeClass="active" smooth={true} offset={-100} duration={500}>
+        <Link to="timeline" activeClass="active" smooth={true} offset={-100} duration={500}  onClick={()=> setIsOpen(!isOpen)}>
           <NavLink>Career</NavLink>
         </Link>
       </li>        
       <li>
-        <Link to="about" activeClass="active" smooth={true} offset={-100} duration={500}>
+        <Link to="about" activeClass="active" smooth={true} offset={-100} duration={500} onClick={()=> setIsOpen(!isOpen)}>
           <NavLink>About</NavLink>
         </Link>
       </li>        
