@@ -25,7 +25,6 @@ const shake = keyframes`
 `;
 
 export const TimeLineItem = styled(motion.div)`
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,5 +88,43 @@ export const TimeLineItem = styled(motion.div)`
     &:hover{
         cursor: pointer;
         animation: ${shake} 1s linear infinite;
+    }
+    @media ${(props) => props.theme.breakpoints.sm} {
+        align-self: center;
+        justify-content: center;
+        border-radius: 2rem;
+        padding-right: 0px;
+        width: 30%;
+        z-index: 100;
+        left: 0;
+        :nth-child(odd){
+            align-self: center;
+            justify-content: center;
+            border-radius: 2rem;
+            padding-right: 0px;
+            width: 30%;
+            z-index: 100;
+            left: 0;
+        }
+        .timeline-item-content {
+            align: center;
+            p{
+                display: none;
+            }
+        }
+        &:after {
+            display: none;
+        }
+
+        span {
+            padding: 1rem;
+            align-items: center;
+            background: red;
+            border-radius: 1rem;
+            font-variant: small-caps;
+            display: inline-flex;
+            justify-content: space-between;
+        }
+
     }
 `;

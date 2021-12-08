@@ -67,7 +67,6 @@ const TimeLine = () => {
                                     ))}
                                     
                                 </span>
-                                {/* <span>{new Intl.DateTimeFormat('en-GB', options).format(data.date) }</span> */}
                                 {new Intl.DateTimeFormat('en-GB', options).format(data.date)}
                             </div>
                             <p>{data.text}</p>

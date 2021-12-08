@@ -9,7 +9,6 @@ export const Container = styled(motion.div)`
   grid-column-gap: 2rem;
   padding: 1rem;
   padding-bottom: 1rem;
-  margin-left: 3rem;
   width: 100%; 
   flex-wrap: wrap;
   position: sticky;
