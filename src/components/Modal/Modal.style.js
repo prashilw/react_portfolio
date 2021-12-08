@@ -16,6 +16,17 @@ export const ModalPopup = styled(Animated)`
  display: flex;
  flex-direction: column;
  justify-content: space-between;
+ @media ${(props) => props.theme.breakpoints.sm} {
+    z-index: 1000;
+    left: 5%;
+    top: 15%;
+    right: 5%;
+    padding: 5rem;
+    max-width: auto;
+    max-height: auto;
+    min-width: 5rem;
+    min-height: 5rem;
+  }
 `;
 
 export const OverLay = styled.div`
@@ -33,4 +44,12 @@ export const OverLay = styled.div`
 export const ButtonContainer = styled.div`
     position: relative;
     bottom: 1rem;
+    .close-button {
+        @media ${(props) => props.theme.breakpoints.sm} {
+            position: absolute;
+            right: 30%;
+            bottom: 0.5rem;
+            width: 2rem;
+        }
+    }
 `;

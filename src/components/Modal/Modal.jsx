@@ -16,7 +16,7 @@ const Modal = ({ open, children, onClose }) => {
                 <ModalPopup>
                     {children}
                     <ButtonContainer>
-                        <ThemeButton style={{ left: '10rem' }} onClick={onClose}>Close</ThemeButton>
+                        <ThemeButton class="close-button" onClick={onClose}>Close</ThemeButton>
                     </ButtonContainer>
                 </ModalPopup>
             </>,
