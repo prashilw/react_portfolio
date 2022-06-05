@@ -56,13 +56,17 @@ export const Div1 = styled.div`
 `;
 const tiltinfwdtr = keyframes`
 0% {
-    -webkit-transform: scaleY(0) translateY(-20rem) skew(0deg, 30deg);
-            transform: scaleY(0) translateY(-20rem) skew(0deg, 30deg);
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 0%;   
+            transform-origin: 100% 0%;
     opacity: 0;
   }
   100% {
-    -webkit-transform:  scaleY(1) translateY(0rem) skew(0deg, 0deg);
-            transform:  scaleY(1) translateY(0rem) skew(0deg, 0deg);
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
     opacity: 1;
   }
 `;
