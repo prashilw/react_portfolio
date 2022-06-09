@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { WiSunrise } from 'react-icons/wi';
+import { GiFruitTree, GiSkills } from "react-icons/gi";
+import { GrBlog, GrDocumentText } from "react-icons/gr";
 import { AiFillInstagram, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span, Hamburger } from './Header.style';
@@ -42,25 +44,26 @@ const Header = () => {
       <Div1 onClick={() => scrollToTop()}>
         <WiSunrise size="5rem" /><Span>Portfolio</Span>
       </Div1>
-      <Div2 style={{ paddingTop: '1.5rem' }} isOpen={isOpen}>
+      
+      <Div2 isOpen={isOpen}>
         <li>
           <Link to="blog" activeClass="active" smooth={true} offset={-100} duration={500} onClick={() => setIsOpen(!isOpen)}>
-            <NavLink>Blogs</NavLink>
+            <NavLink><GrBlog color='blue'/><span>Blogs</span></NavLink>
           </Link>
         </li>
         <li>
           <Link to="skill" activeClass="active" smooth={true} offset={-100} duration={500} onClick={() => setIsOpen(!isOpen)}>
-            <NavLink>Skills</NavLink>
+            <NavLink><GiSkills/><span>Skills</span></NavLink>
           </Link>
         </li>
         <li>
           <Link to="timeline" activeClass="active" smooth={true} offset={-100} duration={500} onClick={() => setIsOpen(!isOpen)}>
-            <NavLink>Career</NavLink>
+            <NavLink><GiFruitTree/><span>Career</span></NavLink>
           </Link>
         </li>
         <li>
           <Link to="about" activeClass="active" smooth={true} offset={-100} duration={500} onClick={() => setIsOpen(!isOpen)}>
-            <NavLink>About</NavLink>
+            <NavLink><GrDocumentText/><span>About</span></NavLink>
           </Link>
         </li>
       </Div2>

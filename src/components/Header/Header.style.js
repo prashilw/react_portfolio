@@ -1,28 +1,22 @@
 import { IoIosArrowDropdown } from 'react-icons/io';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 import { keyframes } from 'styled-components';
 
-export const Container = styled(motion.div)`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 0fr;
-  grid-column-gap: 2rem;
+export const Container = styled.header`
+  display: flex;
   padding-bottom: 1rem;
   width: 100%; 
-  flex-wrap: wrap;
+  align-items:center;
+  justify-content: space-between;
   z-index: 5;
   background-color: #000;
   position: fixed;
-  top: -1rem;
+  height:8rem;
   
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 6px);
-    grid-column-gap: 0.5rem;
-    grid-row-gap: 0.5rem;
+    display: flex;
+    top: 0;
   }
 `;
 
@@ -39,16 +33,15 @@ export const Span = styled.span`
 `
   ;
 export const Div1 = styled.div`
-  grid-area: 1 / 1 / 2 / 4;
   display: flex;
-  padding-right: 3rem;
-  padding-top: 1rem;
   cursor: pointer;
   flex-direction: row;
   align-content: center;
-  width: 100%;
   @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 1 / 1 / 4 / 3;
+    position:absolute;
+    top: 1rem;
+    padding-right: 3rem;
+    padding-top: 1rem;
   }
   a {
     color: ${(props) => props.theme.colors.primary3};
@@ -56,36 +49,43 @@ export const Div1 = styled.div`
 `;
 const tiltinfwdtr = keyframes`
 0% {
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+    -webkit-transform: translateX(100rem);
+            transform: translateX(100rem);
     -webkit-transform-origin: 100% 0%;   
             transform-origin: 100% 0%;
     opacity: 0;
   }
   100% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+    -webkit-transform: translateX(0rem);
+            transform: translateX(0rem);
     -webkit-transform-origin: 100% 0%;
             transform-origin: 100% 0%;
-    opacity: 1;
+    opacity: 0.95;
   }
 `;
 
 export const Div2 = styled.div`
-  grid-area: 1 / 3 / 2 / 4;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items:center;
   height: 100%;
   .close-button {
     display: none;
   }
   @media ${(props) => props.theme.breakpoints.sm} {
     grid-area: 2 / 8 / 5 / 4;
-    justify-content: space-between;
+    position: absolute;
+    top: 5rem;
+    font-size: 2rem;
+    font-variant: small-caps;
+    font-weight: 100;
     flex-direction: column;
+    justify-content: space-evenly !important;
     margin-bottom: 4rem;
     margin-top: 4rem;
-    height: 30rem;
+    height: 100vh;
+    padding-top: 1.5rem;
+    align-items:center;
     /* max-height: ${(props) => (props.isOpen ? '60rem' : '0rem')}; */
     max-height: 40rem;
     /* display:${(props) => (props.isOpen ? 'flex' : 'none')}; */
@@ -96,9 +96,14 @@ export const Div2 = styled.div`
     width: 35rem;
     justify-content: space-between;
     align-items: flex-end;
-    border-bottom-left-radius: 30rem;
+    /* border-bottom-left-radius: 30rem; */
     -webkit-animation: ${tiltinfwdtr} 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: ${tiltinfwdtr} 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    li {
+      border-bottom: 1px solid;
+      border-left: 1px solid;
+      width: 50%
+    }
   
     }
     @media screen and (max-width: 950px) {
@@ -121,18 +126,21 @@ export const Div3 = styled.div`
 // Navigation Links
 export const NavLink = styled.div`
   font-size: 2rem;
+  display:flex;
+  flex-direction: row;
   font-weight: bold;
   padding: 0.5rem;
   margin-right: 3rem;
-  line-height: 32px;
   color: ${(props) => props.theme.colors.primary3};
   transition: 0.4s ease;
+  align-items: center;
   &:hover {
     background-color: #212d45;
     border-radius: 50px;
     font-size: 2rem;
     scale: 1.5;
     opacity: 1;
+    justify-content: space-between;
     cursor: pointer;
   }
   &:active {
@@ -144,6 +152,8 @@ export const NavLink = styled.div`
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0.5rem;
     margin-right: 5rem;
+    width: 10rem;
+    justify-content: space-evenly;
   }
 `;
 
