@@ -23,8 +23,8 @@ const Projects = () => {
       }
     },
     transition: { 
-      delay: 1, 
-      duration: 3, 
+      delay: 0, 
+      duration: 0.5, 
       type:'spring', 
       stiffness: 120, 
       bounce: 0.3,
@@ -37,7 +37,7 @@ const Projects = () => {
   };
 
   const childrenVariant = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 0, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1
@@ -55,7 +55,7 @@ const Projects = () => {
 
 
   return (
-    <Section nopadding id="blog" background={'white'}>
+    <Section nopadding id="blog">
       <SectionDivider />
       <SectionTitle main>Blogs</SectionTitle>
         <GridContainer variants={variants} initial="hidden" animate={controls} ref={ref}>

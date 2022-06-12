@@ -24,12 +24,14 @@ row-gap: 3rem;
 
 `
 export const BlogCard = styled(motion.div)`
-  border-radius: 10px;
+  /* border-radius: 10px; */
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
   width: 400px;
   @media ${(props) => props.theme.breakpoints.sm} {
-    width: 100%;
+    width: 80vw;
+    height: 30rem;  
+    overflow: hidden;
   }
 `;
 export const TitleContent = styled.div`
