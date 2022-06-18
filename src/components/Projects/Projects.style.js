@@ -27,35 +27,40 @@ export const BlogCard = styled(motion.div)`
   /* border-radius: 10px; */
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
+  min-height: 15rem;
   width: 400px;
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 80vw;
-    height: 30rem;  
     overflow: hidden;
   }
 `;
 export const TitleContent = styled.div`
-  text-align: center;
-  z-index: 20;
+  text-align: left;
+  font-size: 2rem;
+  font-family: monospace;
+  flex-wrap: no-wrap;
+  padding: 1rem;
   width: 100%;
 
 `;
 
 
 export const HeaderThree = styled.h3`
-  font-weight: 500;
-  letter-spacing: 2px;
+  font-weight: 100;
+  letter-spacing: 3px;
+  text-decoration: underline;
   color: #9cc9e3;
   padding: .5rem 0;
-  font-size: ${(props) => props.title ? '3rem' : '2rem'};
+  font-size: ${(props) => props.title ? '2rem' : '2rem'};
+  font-family: monospace;
 `;
 
-export const Hr = styled.hr`
-  width: 50px;
-  height: 3px;
-  margin: 20px auto;
-  border: 0;
-  background: #d0bb57;
+export const HrTileDetails = styled.div`
+  display: flex;
+  opacity: 1;
+  bottom: 2rem;
+  min-height: 15rem;
+  position: relative;
 `;
 
 export const Intro = styled.div`
@@ -70,6 +75,7 @@ export const Intro = styled.div`
 
 
 export const CardInfo = styled.p`
+  display: none;
   width: 100%;
   padding: 0 50px;
   color: #e4e6e7;

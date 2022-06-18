@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { WiSunrise } from 'react-icons/wi';
 import { GiFruitTree, GiSkills } from "react-icons/gi";
-import { GrBlog, GrDocumentText } from "react-icons/gr";
+import { FaBlog, FaUserTie } from "react-icons/fa";
 import { AiFillInstagram, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span, Hamburger } from './Header.style';
@@ -48,7 +48,7 @@ const Header = () => {
       <Div2 isOpen={isOpen}>
         <li>
           <Link to="blog" activeClass="active" smooth={true} offset={-100} duration={500} onClick={() => setIsOpen(!isOpen)}>
-            <NavLink><GrBlog color='blue'/><span>Blogs</span></NavLink>
+            <NavLink><FaBlog stroke='#29A9DF'/><span>Blogs</span></NavLink>
           </Link>
         </li>
         <li>
@@ -63,7 +63,7 @@ const Header = () => {
         </li>
         <li>
           <Link to="about" activeClass="active" smooth={true} offset={-100} duration={500} onClick={() => setIsOpen(!isOpen)}>
-            <NavLink><GrDocumentText/><span>About</span></NavLink>
+            <NavLink><FaUserTie stroke='#29A9DF'/><span>About</span></NavLink>
           </Link>
         </li>
       </Div2>

@@ -18,3 +18,14 @@ export const LeftSection = styled(motion.div)`
     margin: 0 auto;
   }
 `;
+
+export const Div3 = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  @media ${(props) => props.theme.breakpoints.sm} {
+    display: flex;
+    flex-direction: rows;
+    align-items: center;
+  }
+`;

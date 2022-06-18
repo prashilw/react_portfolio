@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList } from './Projects.style';
+import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, HrTileDetails, Tag, TagList, TitleContent, UtilityList } from './Projects.style';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
 import { useAnimation } from 'framer-motion';
@@ -22,16 +22,16 @@ const Projects = () => {
         staggerChildren: 1
       }
     },
-    transition: { 
-      delay: 0, 
-      duration: 0.5, 
-      type:'spring', 
-      stiffness: 120, 
+    transition: {
+      delay: 0,
+      duration: 0.5,
+      type: 'spring',
+      stiffness: 120,
       bounce: 0.3,
       when: "beforeChildren",
-      staggerChildren: 0.8 
+      staggerChildren: 0.8
     },
-    exit : {
+    exit: {
       opacity: 0
     }
   };
@@ -53,38 +53,37 @@ const Projects = () => {
     }
   }, [controls, inView]);
 
-
+  const flip_animation = (e) => {
+    console.log('e logged')
+  }
   return (
     <Section nopadding id="blog">
       <SectionDivider />
       <SectionTitle main>Blogs</SectionTitle>
-        <GridContainer variants={variants} initial="hidden" animate={controls} ref={ref}>
-          {projects.map(({ title, description, id, image, tags, source, visit }) => {
-            return (
-              <BlogCard key={id} variants={childrenVariant}>
-                {/* <Img src={image} /> */}
-                <TitleContent>
-                  <HeaderThree title>{title}</HeaderThree>
-                  <Hr />
+      <GridContainer variants={variants} initial="hidden" animate={controls} ref={ref}>
+        {projects.map(({ title, description, id, image, tags, source, visit }) => {
+          return (
+            <BlogCard key={id} variants={childrenVariant}>
+              {/* <Img src={image} /> */}
+              <TitleContent>
+                <HeaderThree title onClick={(e) => flip_animation(e)}>{title}</HeaderThree>
+                <HrTileDetails>
                   <CardInfo>{description}</CardInfo>
-                  <div>
-                    <TitleContent>
-                      <TagList>
-                        {tags.map((tag, i) => (
-                          <Tag key={i} id={i}>{tag}</Tag>
-                        ))}
-                      </TagList>
-                    </TitleContent>
-                  </div>
+                  <TagList>
+                    {tags.map((tag, i) => (
+                      <Tag key={i} id={i}>{tag}</Tag>
+                    ))}
+                  </TagList>
                   <UtilityList>
                     <ExternalLinks href={visit}>Visit</ExternalLinks>
                     <ExternalLinks href={source}>Source</ExternalLinks>
                   </UtilityList>
-                </TitleContent>
-              </BlogCard>
-            )
-          })}
-        </GridContainer>
+                </HrTileDetails>
+              </TitleContent>
+            </BlogCard>
+          )
+        })}
+      </GridContainer>
     </Section>
   );
 }

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { keyframes } from 'styled-components'
 
 export const Section = styled.section`
   display: ${(props) => props.grid ? "grid" : "flex"};
@@ -29,8 +30,11 @@ export const Section = styled.section`
 `
 
 export const SectionTitle = styled.h2`
-  font-weight: 800;
-  
+  font-weight: 200;
+  font-variant-caps: petite-caps;
+  border-bottom: 1px solid;
+  min-width: 20rem;
+  font-style: capitalize;
   font-size: ${(props) => props.main ? '65px' : '56px'};
   line-height: ${(props) => props.main ? '72px' : '56px'};
   width: max-content;
@@ -311,5 +315,31 @@ export const LeftSection = styled.div`
     flex-direction: column;
 
     margin: 0 auto;
+  }
+`;
+
+export const SocialIcons = styled.a`
+transition: 0.3s ease;
+color: ${(props) => props.theme.colors.primary3};
+border-radius: 50px;
+  padding: 8px;
+&:hover {
+    background-color: #212d45;
+    transform: scale(1.2);
+    cursor: pointer;
+    
+  }
+`;
+
+export const flip_animation = keyframes`
+0% {
+    -webkit-transform: rotateY(-80deg);
+            transform: rotateY(-80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+    opacity: 1;
   }
 `;

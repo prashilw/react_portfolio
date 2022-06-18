@@ -12,7 +12,7 @@ export const Container = styled.header`
   background-color: #000;
   position: fixed;
   height:8rem;
-  
+  box-shadow: -2px 1px 5px;
 
   @media ${(props) => props.theme.breakpoints.sm} {
     display: flex;
@@ -75,7 +75,7 @@ export const Div2 = styled.div`
   @media ${(props) => props.theme.breakpoints.sm} {
     grid-area: 2 / 8 / 5 / 4;
     position: absolute;
-    top: 5rem;
+    top: 3rem;
     font-size: 2rem;
     font-variant: small-caps;
     font-weight: 100;
@@ -90,15 +90,15 @@ export const Div2 = styled.div`
     max-height: 40rem;
     /* display:${(props) => (props.isOpen ? 'flex' : 'none')}; */
     display: grid;
-    transition: height 0.5s ease-in,
+    /* transition: height 0.5s ease-in, */
     z-index: 20;
     background: #fff;
     width: 35rem;
     justify-content: space-between;
     align-items: flex-end;
     /* border-bottom-left-radius: 30rem; */
-    -webkit-animation: ${tiltinfwdtr} 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: ${tiltinfwdtr} 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    -webkit-transition: ${tiltinfwdtr} 1s alternate;
+    animation: ${tiltinfwdtr} 1s alternate;
     li {
       border-bottom: 1px solid;
       border-left: 1px solid;
@@ -115,7 +115,7 @@ export const Div3 = styled.div`
   justify-content: space-around;
   align-items: center;
   @media ${(props) => props.theme.breakpoints.sm} {
-    display: flex;
+    display: none;
     position: absolute;
     top: 30vh;
     flex-direction: column;
